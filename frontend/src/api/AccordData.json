@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "question": "Nutritionist-Approved Menus",
+    "answer": "Every meal is meticulously crafted in close consultation with certified pediatric nutritionists to go beyond simple sustenance. We focus on the specific developmental needs of growing children by ensuring a precise balance of essential proteins, vitamins, calcium, and complex carbohydrates. Our menus completely eliminate processed sugars and preservatives, ensuring your child maintains steady energy levels for learning and play throughout the entire school day."
+  },
+  {
+    "id": 2,
+    "question": "Strict Hygiene Standards",
+    "answer": "We treat your child's health with the same care as we would our own. Our state-of-the-art kitchens adhere to rigorous international safety protocols, including mandatory daily health checks for staff and regular sanitization drives. We source only the freshest, high-quality ingredients from trusted local suppliers and use food-grade, sterilized packaging to ensure that every bite remains contaminant-free and safe from our kitchen to your child's hands."
+  },
+  {
+    "id": 3,
+    "question": "Kid-Centric Flavors",
+    "answer": "We understand that children eat with their eyes first, which is why we specialize in overcoming 'picky eater' syndrome. Our culinary team designs recipes that are mild in spice yet rich in natural flavor, incorporating vibrant colors, varied textures, and fun, engaging food shapes. By rotating menus frequently to prevent boredom, we transform lunch into a joyful experience, ensuring the tiffin box comes back empty every single day."
+  },
+  {
+    "id": 4,
+    "question": "Timely Morning Delivery",
+    "answer": "We know that morning routines are a race against the clock, and we promise never to be the reason you are late. Our robust logistics network and dedicated delivery fleet guarantee punctual service, ensuring the tiffin arrives at your doorstep or directly to the school gate well before the first bell rings. Plus, we use insulated thermal carriers during transit to keep hot food hot and fresh food crisp until lunchtime."
+  }
+]

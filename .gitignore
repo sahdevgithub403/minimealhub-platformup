@@ -1,0 +1,118 @@
+# ==========================
+# NODE / FRONTEND
+# ==========================
+# Dependencies
+frontend/node_modules/
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Production builds
+frontend/build/
+frontend/dist/
+frontend/.next/
+frontend/out/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ==========================
+# JAVA / BACKEND
+# ==========================
+# Maven
+backend/target/
+backend/.mvn/
+backend/mvnw
+backend/mvnw.cmd
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle (if using Gradle)
+backend/.gradle/
+backend/build/
+backend/gradle/
+backend/gradlew
+backend/gradlew.bat
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+backend/logs/
+logs/
+
+# Package Files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# JVM crash logs
+hs_err_pid*
+
+# IDE specific files
+backend/.idea/
+backend/*.iml
+backend/.classpath
+backend/.project
+backend/.settings/
+backend/bin/
+
+# ==========================
+# DATABASE
+# ==========================
+*.db
+*.sqlite
+*.sqlite3
+
+# ==========================
+# DOCKER
+# ==========================
+docker-compose.override.yml
+
+# ==========================
+# MISC
+# ==========================
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.cache
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Large files (you can add specific file patterns here)
+# For example:
+# *.mp4
+# *.mov
+# *.avi
+# large-dataset/
