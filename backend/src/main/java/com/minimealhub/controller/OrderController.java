@@ -20,7 +20,7 @@ public class OrderController {
     public List<Order> getMyOrders() {
         String email = org.springframework.security.core.context.SecurityContextHolder.getContext().getAuthentication()
                 .getName();
-        com.minimealhub.entity.User user = userRepository.findByEmail(email).orElseThrow();
+        com.minimealhub.entity.User user = userRepository.findByPhone(email).orElseThrow();
         return orderRepository.findByUser(user);
     }
 
@@ -28,7 +28,7 @@ public class OrderController {
     public ResponseEntity<Order> placeOrder(@RequestBody Order order) {
         String email = org.springframework.security.core.context.SecurityContextHolder.getContext().getAuthentication()
                 .getName();
-        com.minimealhub.entity.User user = userRepository.findByEmail(email).orElseThrow();
+        com.minimealhub.entity.User user = userRepository.findByPhone(email).orElseThrow();
 
         order.setUser(user);
         order.setStatus("PENDING");

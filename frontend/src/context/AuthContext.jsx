@@ -13,14 +13,13 @@ export const AuthProvider = ({ children }) => {
         if (token) {
             try {
                 const decoded = jwtDecode(token);
-                // Check expiry
                 if (decoded.exp * 1000 < Date.now()) {
                     localStorage.removeItem('token');
                     setUser(null);
                 } else {
                     setUser({ ...decoded, token });
                 }
-            } catch (e) {
+            } catch {
                 localStorage.removeItem('token');
                 setUser(null);
             }
@@ -28,42 +27,31 @@ export const AuthProvider = ({ children }) => {
         setLoading(false);
     }, []);
 
-    // OTP-based login functions
-    const sendLoginOtp = async (phoneNumber) => {
-        const response = await api.post('/auth/send-login-otp', { phoneNumber });
-        return response.data;
-    };
-
-    const verifyLoginOtp = async (phoneNumber, otp) => {
-        const response = await api.post('/auth/verify-login-otp', { phoneNumber, otp });
-        const { token } = response.data;
-        localStorage.setItem('token', token);
-        const decoded = jwtDecode(token);
-        setUser({ ...decoded, token });
-        return response.data;
-    };
-
-    // OTP-based registration functions
+    // ================= SEND REGISTER OTP =================
     const sendRegisterOtp = async (firstname, lastname, phoneNumber) => {
         const response = await api.post('/auth/send-register-otp', {
             firstname,
             lastname,
-            phoneNumber
+            phone: phoneNumber, 
         });
         return response.data;
     };
 
+    // ================= VERIFY REGISTER OTP =================
     const verifyRegisterOtp = async (firstname, lastname, phoneNumber, otp) => {
         const response = await api.post('/auth/verify-register-otp', {
             firstname,
             lastname,
-            phoneNumber,
-            otp
+            phone: phoneNumber, 
+            otp,
         });
+
         const { token } = response.data;
         localStorage.setItem('token', token);
+
         const decoded = jwtDecode(token);
         setUser({ ...decoded, token });
+
         return response.data;
     };
 
@@ -76,8 +64,6 @@ export const AuthProvider = ({ children }) => {
         <AuthContext.Provider value={{
             user,
             setUser,
-            sendLoginOtp,
-            verifyLoginOtp,
             sendRegisterOtp,
             verifyRegisterOtp,
             logout,

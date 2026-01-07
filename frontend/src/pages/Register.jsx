@@ -46,13 +46,13 @@ const Register = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center font-quicksand p-5">
+    <div className="relative min-h-screen flex items-center justify-center bg-white font-quicksand p-5">
 
-      <div className="absolute top-[-120px] left-[-120px] w-[320px] h-[320px] bg-primary-orange/20 rounded-full blur-3xl" />
+      {/* <div className="absolute -top-30 -left-30 w-[320px] h-80 bg-white rounded-full blur-3xl" /> */}
 
-      <div className="bg-white rounded-3xl shadow-2xl w-full max-w-5xl grid lg:grid-cols-2">
+      <div className="rounded-b-2xl rounded-t-2xl shadow-2xl w-full max-w-5xl border grid lg:grid-cols-2">
 
-        <div className="hidden lg:flex flex-col justify-center items-center bg-[#FFF7ED] p-10 relative">
+        <div className="hidden lg:flex flex-col justify-center items-center rounded-l-2xl bg-cream p-10 relative">
           <img
             src="https://illustrations.popsy.co/amber/taking-notes.svg"
             alt="Kids Tiffin Illustration"
@@ -133,7 +133,7 @@ const Register = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-primary-orange text-white py-3.5 rounded-full font-bold shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all text-lg mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-red-400 hover:bg-red-600 text-white py-3.5 rounded-full font-bold shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all text-lg mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? "Sending OTP..." : "Send OTP"}
               </button>
@@ -182,13 +182,6 @@ const Register = () => {
               </button>
             </form>
           )}
-
-          <p className="mt-6 text-text-light">
-            Already have an account?{" "}
-            <Link to="/login" className="text-primary-green font-bold hover:underline">
-              Log in
-            </Link>
-          </p>
 
         </div>
       </div>

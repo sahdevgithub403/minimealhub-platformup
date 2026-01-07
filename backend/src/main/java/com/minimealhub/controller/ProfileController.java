@@ -19,18 +19,18 @@ public class ProfileController {
     @GetMapping
     public ResponseEntity<User> getProfile() {
         String email = SecurityContextHolder.getContext().getAuthentication().getName();
-        User user = userRepository.findByEmail(email).orElseThrow();
+        User user = userRepository.findByPhone(email).orElseThrow();
         return ResponseEntity.ok(user);
     }
 
     @PutMapping
     public ResponseEntity<User> updateProfile(@RequestBody UpdateProfileRequest request) {
         String email = SecurityContextHolder.getContext().getAuthentication().getName();
-        User user = userRepository.findByEmail(email).orElseThrow();
+        User user = userRepository.findByPhone(email).orElseThrow();
 
         user.setFirstname(request.getFirstname());
         user.setLastname(request.getLastname());
-        user.setEmail(request.getEmail());
+        user.setPhone(request.getEmail());
 
         userRepository.save(user);
         return ResponseEntity.ok(user);

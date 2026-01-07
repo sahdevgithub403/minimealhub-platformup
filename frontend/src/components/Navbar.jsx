@@ -42,10 +42,10 @@ const Navbar = () => {
              after:transition-all after:duration-300
              hover:after:w-full"
           >
-            About
+            Home
           </Link>
           <Link
-            to={user ? "/meals" : "/login"}
+            to={user ? "/meals" : "/register"}
             className="text-text-dark font-bold  transition-colors font-quicksand text-xl relative inline-block
              after:content-['']
              after:absolute after:left-0 after:bottom-0

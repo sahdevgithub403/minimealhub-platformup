@@ -31,7 +31,7 @@ public class RecipeSuggestionController {
     @PostMapping
     public ResponseEntity<RecipeSuggestion> createSuggestion(@RequestBody Map<String, Object> request) {
         String email = SecurityContextHolder.getContext().getAuthentication().getName();
-        User user = userRepository.findByEmail(email).orElseThrow();
+        User user = userRepository.findByPhone(email).orElseThrow();
 
         RecipeSuggestion suggestion = RecipeSuggestion.builder()
                 .user(user)

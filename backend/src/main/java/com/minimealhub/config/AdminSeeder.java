@@ -5,7 +5,6 @@ import com.minimealhub.entity.User;
 import com.minimealhub.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -13,20 +12,24 @@ import org.springframework.stereotype.Component;
 public class AdminSeeder implements CommandLineRunner {
 
     private final UserRepository userRepository;
-    private final PasswordEncoder passwordEncoder;
 
     @Override
-    public void run(String... args) throws Exception {
-        if (userRepository.findByEmail("admin@minimeal.com").isEmpty()) {
+    public void run(String... args) {
+
+        String adminPhone = "9999999999"; // real phone number
+
+        if (userRepository.findByPhone(adminPhone).isEmpty()) {
+
             User admin = User.builder()
                     .firstname("Admin")
                     .lastname("User")
-                    .email("admin@minimeal.com")
-                    .password(passwordEncoder.encode("admin123"))
+                    .phone(adminPhone)
                     .role(Role.ADMIN)
                     .build();
+
             userRepository.save(admin);
-            System.out.println("ADMIN USER CREATED: admin@minimeal.com / admin123");
+
+            System.out.println("ADMIN USER CREATED WITH PHONE: " + adminPhone);
         }
     }
 }

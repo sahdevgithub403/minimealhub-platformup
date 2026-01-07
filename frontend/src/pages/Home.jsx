@@ -143,56 +143,83 @@ const Home = () => {
       </section>
 
       {/* ================= DELIVERY INFO ================= */}
-      <section className="py-28 bg-white">
+      <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-6">
-          <div className="bg-white rounded-4xl shadow-lg p-12 grid lg:grid-cols-2 gap-16 items-center">
-            {/* LEFT */}
+          <div className="bg-white rounded-3xl shadow-xl p-12 grid lg:grid-cols-2 gap-16 items-center">
+            {/* LEFT CONTENT */}
             <div>
-              <h2 className="font-fredoka text-4xl mb-8">
-                Morning Delivery Information
+              <h2 className="font-fredoka text-4xl font-semibold mb-10 text-gray-800">
+                MiniMealHub – Delivery & Location
               </h2>
 
-              <div className="flex gap-6 mb-6">
-                <div className="w-14 h-14 rounded-full bg-white-100 flex items-center justify-center text-blue-600 text-2xl">
+              {/* Delivery Time */}
+              <div className="flex gap-6 mb-8">
+                <div className="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-2xl shadow">
                   <IoTimeOutline />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg">Timely Delivery</h4>
-                  <p className="text-text-light">
-                    We deliver between{" "}
+                  <h4 className="font-semibold text-lg text-gray-800">
+                    Morning Meal Delivery
+                  </h4>
+                  <p className="text-gray-600 leading-relaxed">
+                    Fresh & hygienic meals delivered daily between{" "}
                     <span className="font-semibold text-blue-600">
                       7:00 AM – 8:30 AM
-                    </span>
-                    so food stays fresh before school.
+                    </span>{" "}
+                    so your day starts healthy.
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-6">
-                <div className="w-14 h-14 rounded-full bg-red-400 flex items-center justify-center text-black text-2xl">
+              {/* Location */}
+              <div className="flex gap-6 mb-8">
+                <div className="w-14 h-14 rounded-full bg-red-100 flex items-center justify-center text-red-600 text-2xl shadow">
                   <IoLocationOutline />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg">Coverage Areas</h4>
-                  <p className="text-text-light">
-                    Downtown, Green Park, Hillside Avenue, and Lakeside
-                    districts.
+                  <h4 className="font-semibold text-lg text-gray-800">
+                    Kitchen Location
+                  </h4>
+                  <p className="text-gray-600 leading-relaxed">
+                    MiniMealHub Kitchen, New Baradwari, Sakchi, Jamshedpur,
+                    Jharkhand.
+                  </p>
+                </div>
+              </div>
+
+              {/* Coverage */}
+              <div className="flex gap-6">
+                <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center text-green-600 text-2xl shadow">
+                  <IoRestaurantOutline />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-lg text-gray-800">
+                    Service Areas
+                  </h4>
+                  <p className="text-gray-600 leading-relaxed">
+                    Sakchi, Bistupur, Kadma, Sonari, Mango & nearby areas.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* RIGHT */}
-            <div className="rounded-4px shadow-xl">
-              <img
-                src="https://thumbs.dreamstime.com/b/food-menu-kids-seamess-pattern-vector-illustration-fresh-healthy-cartoon-fruit-baby-wallpaper-cute-colorful-background-187235860.jpg"
-                alt="Delivery"
-                className="w-full h-full rounded-3xl"
-              />
+            {/* RIGHT MAP */}
+            <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
+              <div className="relative w-full h-[420px]">
+                <iframe
+                  title="MiniMealHub Location"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3548.6310522017816!2d86.21391037586298!3d22.808647786423354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f5e30040dbbcb1%3A0x776662b5571b6b0e!2sSubhash%20ashram%2C%20Jamshedpur!5e1!3m2!1sen!2sin"
+                  className="absolute inset-0 w-full h-full border-0"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
+
       {/* ================= TESTIMONIALS ================= */}
       <section className="py-28 bg-white">
         <div className="container mx-auto px-6 text-center">
@@ -220,14 +247,31 @@ const Home = () => {
           >
             {dataTest.map((t, i) => (
               <SwiperSlide key={i}>
-                <div className="p-10 rounded-4xl text-left border border-gray-200 shadow h-full">
-                  <h4 className="font-semibold text-lg">{t.name}</h4>
-                  <p className="text-sm text-gray-500 mb-4">{t.role}</p>
-                  <p className="text-gray-600 italic mb-6">“{t.text}”</p>
+                <div className="p-10 rounded-3xl text-left border border-gray-200 shadow-md h-full bg-white">
+                  {/* USER INFO */}
+                  <div className="flex items-center gap-4 mb-3">
+                    <img
+                      src={t.image}
+                      alt={t.name}
+                      className="w-12 h-12 rounded-full object-cover"
+                    />
+                    <div>
+                      <h4 className="font-semibold text-lg text-gray-800">
+                        {t.name}
+                      </h4>
+                      <p className="text-sm text-gray-500">{t.role}</p>
+                    </div>
+                  </div>
 
-                  <div className="flex text-yellow-400">
+                  {/* REVIEW */}
+                  <p className="text-gray-600 italic mb-6 leading-relaxed">
+                    “{t.text}”
+                  </p>
+
+                  {/* RATING */}
+                  <div className="flex gap-1 text-yellow-400">
                     {[...Array(5)].map((_, i) => (
-                      <IoCheckmarkCircle key={i} />
+                      <IoCheckmarkCircle key={i} className="w-5 h-5" />
                     ))}
                   </div>
                 </div>
