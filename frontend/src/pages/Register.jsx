@@ -50,25 +50,9 @@ const Register = () => {
 
       {/* <div className="absolute -top-30 -left-30 w-[320px] h-80 bg-white rounded-full blur-3xl" /> */}
 
-      <div className="rounded-b-2xl rounded-t-2xl shadow-2xl w-full max-w-5xl border grid lg:grid-cols-2">
-
-        <div className="hidden lg:flex flex-col justify-center items-center rounded-l-2xl bg-cream p-10 relative">
-          <img
-            src="https://illustrations.popsy.co/amber/taking-notes.svg"
-            alt="Kids Tiffin Illustration"
-            className="w-full max-w-sm"
-          />
-
-          <h3 className="font-fredoka text-3xl text-text-dark mt-8 text-center">
-            Healthy Tiffins 🍱
-          </h3>
-          <p className="text-text-light text-center mt-3 max-w-xs">
-            Fresh, nutritious meals prepared with love for growing kids.
-          </p>
-        </div>
 
         {/* ===== RIGHT : FORM ===== */}
-        <div className="p-10 md:p-12 text-center">
+        <div className="p-10 md:p-12 text-center border-2 rounded-2xl">
 
           <h2 className="text-3xl font-fredoka mb-2 text-text-dark">
             Join the Family! 🌟
@@ -96,7 +80,7 @@ const Register = () => {
                   value={firstname}
                   onChange={(e) => setFirstname(e.target.value)}
                   required
-                  className="w-full p-3 border-2 border-gray-100 rounded-xl focus:outline-none focus:border-primary-green transition bg-gray-50 focus:bg-white"
+                  className="w-full p-3 border-2  rounded-xl focus:outline-none focus:border-primary-green transition "
                 />
               </div>
 
@@ -110,7 +94,7 @@ const Register = () => {
                   onChange={(e) => setLastname(e.target.value)}
                   label="Last Name"
                   required
-                  className="w-full p-3 border-2 border-gray-100 rounded-xl focus:outline-none focus:border-primary-green transition bg-gray-50 focus:bg-white"
+                  className="w-full p-3 border-2  rounded-xl focus:outline-none focus:border-primary-green transition "
                 />
               </div>
 
@@ -125,7 +109,7 @@ const Register = () => {
                   onChange={(e) => setPhoneNumber(e.target.value)}
                   required
                   pattern="[0-9+\s-]+"
-                  className="w-full p-3 border-2 border-gray-100 rounded-xl focus:outline-none focus:border-primary-green transition bg-gray-50 focus:bg-white"
+                  className="w-full p-3 border-2  rounded-xl focus:outline-none focus:border-primary-green transition "
                 />
               </div>
 
@@ -184,7 +168,6 @@ const Register = () => {
           )}
 
         </div>
-      </div>
     </div>
   );
 };

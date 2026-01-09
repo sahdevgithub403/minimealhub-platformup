@@ -142,6 +142,82 @@ const Home = () => {
         </div>
       </section>
 
+      {/* ================= TESTIMONIALS ================= */}
+      <section className="py-28 bg-white">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="font-fredoka text-4xl mb-4">
+            Happy Parents, Happy Kids
+          </h2>
+          <div className="w-20 h-1.5 bg-red-400 mx-auto rounded mb-12"></div>
+
+          {/* 🔥 Custom Navigation Buttons */}
+
+          {/* Swiper */}
+          <Swiper
+            navigation={{
+              prevEl: ".custom-prev",
+              nextEl: ".custom-next",
+            }}
+            spaceBetween={40}
+            modules={[Navigation]}
+            breakpoints={{
+              540: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            className="pb-12"
+          >
+            {dataTest.map((t, i) => (
+              <SwiperSlide key={i}>
+                <div className="p-10 rounded-3xl text-left border border-gray-200 shadow-md h-full bg-white">
+                  {/* USER INFO */}
+                  <div className="flex items-center gap-4 mb-3">
+                    <img
+                      src={t.image}
+                      alt={t.name}
+                      className="w-12 h-12 rounded-full object-cover"
+                    />
+                    <div>
+                      <h4 className="font-semibold text-lg text-gray-800">
+                        {t.name}
+                      </h4>
+                      <p className="text-sm text-gray-500">{t.role}</p>
+                    </div>
+                  </div>
+
+                  {/* REVIEW */}
+                  <p className="text-gray-600 italic mb-6 leading-relaxed">
+                    “{t.text}”
+                  </p>
+
+                  {/* RATING */}
+                  <div className="flex gap-1 text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <IoCheckmarkCircle key={i} className="w-5 h-5" />
+                    ))}
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+        <div className="flex justify-center gap-6 m-6">
+          {/* Prev */}
+          <button className="custom-prev w-14 h-14 rounded-full border border-gray-300 flex items-center justify-center text-gray-400 hover:border-gray-500 transition">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2" />
+            </svg>
+          </button>
+
+          {/* Next */}
+          <button className="custom-next w-14 h-14 rounded-full border-2 border-gray-700 flex items-center justify-center text-gray-700 hover:bg-gray-100 transition">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" />
+            </svg>
+          </button>
+        </div>
+      </section>
+
       {/* ================= DELIVERY INFO ================= */}
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-6">
@@ -217,82 +293,6 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ================= TESTIMONIALS ================= */}
-      <section className="py-28 bg-white">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="font-fredoka text-4xl mb-4">
-            Happy Parents, Happy Kids
-          </h2>
-          <div className="w-20 h-1.5 bg-red-400 mx-auto rounded mb-12"></div>
-
-          {/* 🔥 Custom Navigation Buttons */}
-
-          {/* Swiper */}
-          <Swiper
-            navigation={{
-              prevEl: ".custom-prev",
-              nextEl: ".custom-next",
-            }}
-            spaceBetween={40}
-            modules={[Navigation]}
-            breakpoints={{
-              540: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-            }}
-            className="pb-12"
-          >
-            {dataTest.map((t, i) => (
-              <SwiperSlide key={i}>
-                <div className="p-10 rounded-3xl text-left border border-gray-200 shadow-md h-full bg-white">
-                  {/* USER INFO */}
-                  <div className="flex items-center gap-4 mb-3">
-                    <img
-                      src={t.image}
-                      alt={t.name}
-                      className="w-12 h-12 rounded-full object-cover"
-                    />
-                    <div>
-                      <h4 className="font-semibold text-lg text-gray-800">
-                        {t.name}
-                      </h4>
-                      <p className="text-sm text-gray-500">{t.role}</p>
-                    </div>
-                  </div>
-
-                  {/* REVIEW */}
-                  <p className="text-gray-600 italic mb-6 leading-relaxed">
-                    “{t.text}”
-                  </p>
-
-                  {/* RATING */}
-                  <div className="flex gap-1 text-yellow-400">
-                    {[...Array(5)].map((_, i) => (
-                      <IoCheckmarkCircle key={i} className="w-5 h-5" />
-                    ))}
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-        <div className="flex justify-center gap-6 m-6">
-          {/* Prev */}
-          <button className="custom-prev w-14 h-14 rounded-full border border-gray-300 flex items-center justify-center text-gray-400 hover:border-gray-500 transition">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2" />
-            </svg>
-          </button>
-
-          {/* Next */}
-          <button className="custom-next w-14 h-14 rounded-full border-2 border-gray-700 flex items-center justify-center text-gray-700 hover:bg-gray-100 transition">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" />
-            </svg>
-          </button>
         </div>
       </section>
 
